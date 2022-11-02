@@ -55,8 +55,12 @@ class Nodo{
         
     }
 
-    buscar(){
-
+    buscar(codigo){
+      let temp = this.primero;
+      while(temp.codigo != codigo){
+        temp = temp.sig;
+      }
+      return temp
     }
   }
  
@@ -70,5 +74,6 @@ class Nodo{
   lista.agregar(n3);
   lista.agregar(n4);
   lista.listar();
-  lista.invertir();
   console.log(lista.listar());
+  
+  console.log(lista.buscar(333))
