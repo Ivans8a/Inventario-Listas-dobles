@@ -63,8 +63,9 @@ class Nodo{
       return temp
     }
 
-    eliminar(codigo){
-      n3.ant.sig = n3.sig
+    eliminar(nodo){
+      nodo.ant.sig = nodo.sig
+      nodo.sig.ant = nodo.ant
     }
   }
  
@@ -77,9 +78,6 @@ class Nodo{
   lista.agregar(n2);
   lista.agregar(n3);
   lista.agregar(n4);
-  lista.listar();
-  lista.eliminar()
-  console.log(lista)
+  lista.eliminar(n3)
   console.log(lista.listar());
-  
-  console.log(lista.buscar(333))
+  console.log(lista)
