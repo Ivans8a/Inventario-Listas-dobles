@@ -67,6 +67,21 @@ class Nodo{
       nodo.ant.sig = nodo.sig
       nodo.sig.ant = nodo.ant
     }
+
+    listarInverso(){
+      let res="";
+      let temp=this.ultimo;
+      while (temp){
+        res+= `
+        codigo:${temp.codigo} 
+        producto:${temp.nombre} 
+        cantidad:${temp.cantidad}  
+        precio $${temp.precio}
+        `;
+        temp=temp.ant;
+      }
+      return res;
+    }
   }
  
   let lista=new ListaDoble();
@@ -79,5 +94,5 @@ class Nodo{
   lista.agregar(n3);
   lista.agregar(n4);
   lista.eliminar(n3)
-  console.log(lista.listar());
+  console.log(lista.listarInverso());
   console.log(lista)
