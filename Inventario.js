@@ -62,6 +62,10 @@ class Nodo{
       }
       return temp
     }
+
+    eliminar(codigo){
+      n3.ant.sig = n3.sig
+    }
   }
  
   let lista=new ListaDoble();
@@ -74,6 +78,8 @@ class Nodo{
   lista.agregar(n3);
   lista.agregar(n4);
   lista.listar();
+  lista.eliminar()
+  console.log(lista)
   console.log(lista.listar());
   
   console.log(lista.buscar(333))
